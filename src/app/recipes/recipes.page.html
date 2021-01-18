@@ -1,16 +1,35 @@
+<!-- <div id="custom-overlay" [style.display]="splash ? 'flex': 'none'">
+  <div class="flb">
+    <div class="Aligner-item Aligner-item--top"></div>
+    <img src="../../assets/icon/kisspng-computer-icons-radar-clip-art-radar-5ac497d8901543.2262960115228333685902.png">
+    <img src='../../assets/icon/image (3).png'>
+    <div class="Aligner-item Aligner-item--bottom"></div>
+  </div>
+</div> -->
+
 <ion-header>
   <ion-toolbar color="primary">
     <ion-title>RECIPES</ion-title>
   </ion-toolbar>
 </ion-header>
 
+<ion-searchbar showCancelButton="always"></ion-searchbar>
+
 <ion-content>
-<ion-grid>
-  <ion-row>
-<ul *ngFor="let recipt of recipes">
-    <li>{{recipt.recipe.label}}</li>
-    <img src={{recipt.recipe.image}}>
-</ul>
-  </ion-row>
+  <ion-grid>
+    <ion-row>
+      <ion-col size-lg='3' size-md='4' size-sm='6' size='12' *ngFor="let recipt of recipes" >
+<ion-card> 
+  <img src='{{recipt.recipe.image}}'alt="">
+  <ion-card-header>
+    <ion-card-title>{{recipt.recipe.label}}</ion-card-title>
+  </ion-card-header>
+
+</ion-card>
+
+</ion-col>
+</ion-row>
 </ion-grid>
+
 </ion-content>
+
